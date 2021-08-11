@@ -18,6 +18,10 @@ app.use(cors());
 app.use('/posts', postRoutes);
 app.use("/user", userRouter);
 
+app.get('/', (req, res) => {
+    res.send("Backend is working");
+});
+
 // const CONNECTION_URL = 'mongodb+srv://username:password@cluster0.l0uz4.mongodb.net/databasename?retryWrites=true&w=majority';   write this in .env file
 const PORT = process.env.PORT|| 5000;
 
