@@ -1,12 +1,15 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
 
 import UserModal from "../models/user.js";
 
-const secret = 'test';
+dotenv.config();
+
+const secret = process.env.SECRET;
 
 export const signin = async (req, res) => {
-    console.log("sign in backend");
+  //  console.log("sign in backend");
     const { email, password } = req.body;
 
   try {
