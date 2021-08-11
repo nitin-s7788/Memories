@@ -60,7 +60,9 @@ export const updatePost = async (req, res) => {
 
     const oldPost = await PostMessage.findById(id);
 
-    const updatedPost = { ...oldPost, creator : creator, title : title, message : message, tags : tags, selectedFile : selectedFile };
+    // const updatedPost = { ...oldPost, creator : creator, title : title, message : message, tags : tags, selectedFile : selectedFile };  this does not work correctly
+
+    const updatedPost = { _id : oldPost._id, likes : oldPost.likes, name : oldPost.name, createdAt : oldPost.createdAt, creator : creator, title : title, message : message, tags : tags, selectedFile : selectedFile };
 
     // console.log(updatedPost);
 

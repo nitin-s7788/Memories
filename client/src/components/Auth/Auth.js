@@ -31,6 +31,7 @@ const SignUp = () => {
     try {
 
         console.log("hi");
+        console.log("formData : ", formData);
       const { data } = await api.signIn(formData);      // return an object containing name, email, hashed password, token, id of the user.
 
     console.log("incoming data : ", data);
@@ -39,6 +40,7 @@ const SignUp = () => {
   
       router.push('/');
     } catch (error) {
+        console.log("why error not showing");
       console.log(error);
     }
   };
